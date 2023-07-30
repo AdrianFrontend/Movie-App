@@ -1,0 +1,60 @@
+.navigation {
+	margin-bottom: 20px;
+}
+
+.navigation::after {
+	display: block;
+	content: "";
+	width: 148px;
+	height: 1px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+
+	background-color: gray;
+	opacity: 0.3;
+}
+
+.navigation a {
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
+	font-weight: 400px;
+	line-height: 22px;
+
+	display: inline-block;
+	width: 64px;
+}
+
+.navigation a:hover {
+	opacity: 0.5;
+}
+
+.search-link {
+	margin-right: 20px;
+}
+
+.active {
+	color: rgba(24, 144, 255, 1) !important;
+}
+
+.active::after {
+	display: block;
+	content: "";
+	width: 64px;
+	height: 2px;
+
+	position: relative;
+	left: 382px;
+	top: 10px;
+
+	background-color: rgba(24, 144, 255, 1);
+}
+
+.search-link.active::after {
+	left: 0px;
+}
+.rated-link.active::after {
+	left: 0px;
+}
