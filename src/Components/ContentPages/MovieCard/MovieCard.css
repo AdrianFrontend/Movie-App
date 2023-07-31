@@ -156,12 +156,13 @@ div.ant-image-mask {
 		max-width: 205px;
 
 		left: -40px;
+		top: -20px;
 
 		font-size: 18px;
 
 		margin-bottom: 10px;
 
-		line-height: 23px;
+		line-height: 20px;
 	}
 
 	.rating {
@@ -170,14 +171,18 @@ div.ant-image-mask {
 	}
 
 	.release-date {
-		left: -40px;
+		position: absolute;
+		left: 75px;
 		/* top: -5px; */
+		top: 77px;
 
 		width: 200px;
 	}
 
 	.genres {
-		left: -40px;
+		position: absolute;
+		left: 75px;
+		top: 50px;
 
 		width: 240px;
 	}

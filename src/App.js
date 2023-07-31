@@ -37,6 +37,9 @@ const App = () => {
 	let renderContentPage = () => {
 		if (currentPath === "/search") {
 			if (!movies) {
+				if (error) {
+					return <div>Please, use VPN!</div>;
+				}
 				movieAPI
 					.getMovies(searchRequest, page)
 					.then((responce) => {
@@ -67,8 +70,11 @@ const App = () => {
 		}
 	};
 
-	if (genres.length === 0) {
-		movieAPI.getGenres().then((r) => setGenres(r));
+	if (genres.length === 0 && !error) {
+		movieAPI
+			.getGenres()
+			.then((r) => setGenres(r))
+			.catch((err) => setError(err));
 	}
 
 	return (

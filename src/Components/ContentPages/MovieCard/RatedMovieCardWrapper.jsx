@@ -7,12 +7,18 @@ import PropTypes from "prop-types";
 
 const RatedMovieCardWrapper = ({ id, rating }) => {
 	const [movie, setMovie] = useState(0);
+	const [error, setError] = useState();
 
-	if (!movie) {
-		movieAPI.getFilmById(id).then((r) => {
-			setMovie(r);
-		});
+	if (!movie && !error) {
+		movieAPI
+			.getFilmById(id)
+			.then((r) => {
+				setMovie(r);
+			})
+			.catch((error) => setError(error));
 		return <Spin />;
+	} else if (error) {
+		return <>{error}</>;
 	} else {
 		let genresList = [];
 
